@@ -1686,7 +1686,7 @@ func TestSetConfigValueTimeoutSeconds(t *testing.T) {
 }
 
 func TestSetConfigValueTimeoutSecondsRejectsInvalidValues(t *testing.T) {
-	for _, value := range []string{"not-a-number", "-1"} {
+	for _, value := range []string{"not-a-number", "-1", "9223372037"} {
 		if err := setConfigValue(&Config{}, "llm.timeout_sec", value); err == nil {
 			t.Fatalf("setConfigValue() accepted timeout_sec=%q", value)
 		}

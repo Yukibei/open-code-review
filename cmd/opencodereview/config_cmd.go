@@ -708,8 +708,8 @@ func parseTimeoutSeconds(value string) (int, error) {
 	if err != nil {
 		return 0, fmt.Errorf("must be an integer, got %q", value)
 	}
-	if seconds < 0 {
-		return 0, fmt.Errorf("must be non-negative, got %d", seconds)
+	if _, err := llm.ValidateTimeoutSec(seconds); err != nil {
+		return 0, err
 	}
 	return seconds, nil
 }
