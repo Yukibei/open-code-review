@@ -496,6 +496,8 @@ func TestSetConfigValueCustomProviderAuxiliaryFieldRequiresExistingProvider(t *t
 		{"extra_body", "nonexistent", "providers.nonexistent.extra_body", `{"temperature":0.2}`, "providers.nonexistent.protocol"},
 		{"extra_headers", "nonexistent", "providers.nonexistent.extra_headers", "X-Custom=value", "providers.nonexistent.protocol"},
 		{"retry_codes", "nonexistent", "providers.nonexistent.retry_codes", "400", "providers.nonexistent.protocol"},
+		{"timeout_sec", "brandnew", "providers.brandnew.timeout_sec", "900", "providers.brandnew.protocol"},
+		{"custom timeout_sec", "brandnew", "custom_providers.brandnew.timeout_sec", "900", "custom_providers.brandnew.protocol"},
 		{"custom provider namespace", "my-gateway", "custom_providers.my-gateway.extra_headers", "X-Custom=value", "custom_providers.my-gateway.protocol"},
 	}
 

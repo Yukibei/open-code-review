@@ -842,7 +842,7 @@ func setCustomProviderValue(cfg *Config, key, value string) error {
 
 func isAuxiliaryProviderField(field string) bool {
 	switch field {
-	case "extra_body", "extra_headers", "retry_codes":
+	case "extra_body", "extra_headers", "retry_codes", "timeout_sec":
 		return true
 	default:
 		return false
